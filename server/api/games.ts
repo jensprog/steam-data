@@ -10,7 +10,7 @@ export default defineEventHandler(async () => {
 
   return new Promise((resolve, reject) => {
     https
-      .get(url, { rejectUnauthorized: false }, (res) => {
+      .get(url, (res) => {
         let data = "";
         res.on("data", (chunk) => {
           data += chunk;
