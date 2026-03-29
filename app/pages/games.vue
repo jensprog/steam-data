@@ -1,8 +1,7 @@
 <script setup>
-import { useGames } from "../composables/useGames";
+import { useApi } from "../composables/useApi";
 
-const { games, fetchGames } = useGames();
-
+const { data: games, fetchData: fetchGames } = useApi("games");
 await fetchGames();
 </script>
 

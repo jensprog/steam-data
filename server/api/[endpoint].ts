@@ -1,8 +1,9 @@
 import https from "node:https";
 
-export default defineEventHandler(async () => {
+export default defineEventHandler(async (event) => {
+  const endpoint = getRouterParam(event, "endpoint");
   const { apiBaseUrl } = useRuntimeConfig();
-  const url = `${apiBaseUrl}/games`;
+  const url = `${apiBaseUrl}/${endpoint}`;
 
   if (!url.startsWith("https")) {
     return await $fetch(url);
