@@ -14,7 +14,9 @@ await fetchGenres();
     </thead>
     <tbody>
       <tr v-for="genre in genres" :key="genre.id">
-        <td>{{ genre.name }}</td>
+        <td>
+          <NuxtLink :to="`genres/${genre.id}`">{{ genre.name }}</NuxtLink>
+        </td>
       </tr>
     </tbody>
   </table>
