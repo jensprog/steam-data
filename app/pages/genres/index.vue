@@ -1,5 +1,5 @@
 <script setup>
-import { useApi } from "../composables/useApi";
+import { useApi } from "../../composables/useApi";
 
 const { data: genres, fetchData: fetchGenres } = useApi("genres");
 await fetchGenres();

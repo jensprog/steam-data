@@ -7,14 +7,22 @@ const route = useRoute();
 const gameId = route.params.id;
 const { data: game, fetchData: fetchGame } = useApiDetails("games", gameId);
 await fetchGame();
+
+const developerLinks = computed(() => game.value?.links.filter((link) => link.title?.startsWith("Developer: ")) ?? []);
 </script>
 
 <template>
   <div v-if="game" :key="game.id">
     <h1>
+      <strong>Game: </strong>
       <strong>{{ game.name }}</strong>
     </h1>
-    <p><strong>Developer:</strong> {{ game.developers }}</p>
+    <ul>
+      <li v-for="link in developerLinks" :key="link.href">
+        <strong>Developer: </strong>
+        <NuxtLink :to="link.href">{{ link.title.replace("Developer: ", "") }} </NuxtLink>
+      </li>
+    </ul>
     <p><strong>Price:</strong> ${{ game.price.toFixed(2) }}</p>
     <p><strong>Release Date:</strong> {{ game.release_date }}</p>
     <p><strong>Genre:</strong> {{ game.genres }}</p>
