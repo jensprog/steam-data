@@ -1,5 +1,5 @@
 <script setup>
-import { useApi } from "../composables/useApi";
+import { useApi } from "../../composables/useApi";
 
 const { data: developers, fetchData: fetchDevelopers } = useApi("developers");
 await fetchDevelopers();
@@ -14,7 +14,7 @@ await fetchDevelopers();
     </thead>
     <tbody>
       <tr v-for="developer in developers" :key="developer.id">
-        <td>{{ developer.name }}</td>
+        <td><NuxtLink :to="`/developers/${developer.id}`">{{ developer.name }}</NuxtLink></td>
       </tr>
     </tbody>
   </table>
