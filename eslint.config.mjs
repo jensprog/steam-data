@@ -6,6 +6,7 @@ export default withNuxt({
     "vue/max-attributes-per-line": "off",
     "vue/html-closing-bracket-newline": "off",
     "vue/singleline-html-element-content-newline": "off",
+    "vue/html-self-closing": "off",
     "@stylistic/comma-dangle": "off",
     "@stylistic/semi": "off",
     "@stylistic/quotes": "off",
