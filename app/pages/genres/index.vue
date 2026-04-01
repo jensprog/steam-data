@@ -1,8 +1,9 @@
 <script setup>
-import { useApi } from "../../composables/useApi";
+import { useGenresStore } from "../../stores/useGenresStore";
 
-const { data: genres, fetchData: fetchGenres } = useApi("genres");
-await fetchGenres();
+const store = useGenresStore();
+const { genres } = storeToRefs(store);
+await store.fetchGenres();
 </script>
 
 <template>

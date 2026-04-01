@@ -1,4 +1,4 @@
-import type { Game } from "~/types/games";
+import type { Game } from "../types/games";
 
 export const useGamesStore = defineStore("games", () => {
   const games = ref<Game[]>([]);

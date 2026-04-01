@@ -1,8 +1,9 @@
 <script setup>
-import { useApi } from "../../composables/useApi";
+import { useDevelopersStore } from "../../stores/useDevelopersStore";
 
-const { data: developers, fetchData: fetchDevelopers } = useApi("developers");
-await fetchDevelopers();
+const store = useDevelopersStore();
+const { developers } = storeToRefs(store);
+await store.fetchDevelopers();
 </script>
 
 <template>
