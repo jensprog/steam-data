@@ -1,9 +1,10 @@
 /* Index page for games, lists all games from the API */
 <script setup>
-import { useApi } from "../../composables/useApi";
+import { useGamesStore } from "../../stores/useGamesStore";
 
-const { data: games, fetchData: fetchGames } = useApi("games");
-await fetchGames();
+const store = useGamesStore();
+const { games } = storeToRefs(store);
+await store.fetchGames();
 </script>
 
 <template>

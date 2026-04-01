@@ -12,5 +12,6 @@ export default withNuxt({
     "@stylistic/quotes": "off",
     "@stylistic/brace-style": "off",
     "@stylistic/arrow-parens": "off",
+    "@stylistic/member-delimiter-style": "off"
   },
 });
