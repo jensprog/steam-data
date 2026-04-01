@@ -1,8 +1,5 @@
 /* Fetching game details based on the ID from the URL */
 <script setup>
-import { useApiDetails } from "../../composables/useApiDetails";
-import { useRoute } from "vue-router";
-
 const route = useRoute();
 const gameId = route.params.id;
 const { data: game, fetchData: fetchGame } = useApiDetails("games", gameId);
@@ -25,7 +22,7 @@ const developerLinks = computed(() => game.value?.links.filter((link) => link.ti
     </ul>
     <p><strong>Price:</strong> ${{ game.price.toFixed(2) }}</p>
     <p><strong>Release Date:</strong> {{ game.release_date }}</p>
-    <p><strong>Genre:</strong> {{ game.genres }}</p>
+    <p><strong>Genre:</strong> {{ game.genres.join(", ") }}</p>
     <p><strong>Estimated Owners:</strong> {{ game.estimated_owners }}</p>
     <p><strong>Metacritic Score:</strong> {{ game.metacritic_score }}</p>
     <p><strong>Windows platform:</strong> {{ game.windows }}</p>
