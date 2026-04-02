@@ -16,20 +16,7 @@ const next = computed(() => links.value.next || undefined);
 
 <template>
   <div>
-    <table class="table-auto mx-auto lg:text-xl border-collapse">
-      <thead>
-        <tr>
-          <th class="border border-gray-400 py-2 px-4">Name</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr v-for="game in games" :key="game.id">
-          <td class="border border-gray-400 py-2 px-4">
-            <NuxtLink :to="`games/${game.id}`">{{ game.name }}</NuxtLink>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+    <ResourceList :items="games" :base-path="'/games'" />
     <PaginationLinks :prev="prev" :next="next" />
   </div>
 </template>

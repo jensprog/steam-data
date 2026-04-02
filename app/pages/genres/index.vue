@@ -15,20 +15,7 @@ const next = computed(() => links.value.next || undefined);
 
 <template>
   <div>
-    <table>
-      <thead>
-        <tr>
-          <th>Name</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr v-for="genre in genres" :key="genre.id">
-          <td>
-            <NuxtLink :to="`genres/${genre.id}`">{{ genre.name }}</NuxtLink>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+    <ResourceList :items="genres" :base-path="'/genres'" />
     <PaginationLinks :prev="prev" :next="next" />
   </div>
 </template>
