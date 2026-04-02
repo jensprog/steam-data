@@ -1,7 +1,5 @@
 /* Index page for games, lists all games from the API */
 <script setup>
-import { useGamesStore } from "../../stores/useGamesStore";
-
 const route = useRoute();
 const store = useGamesStore();
 const { games, links } = storeToRefs(store);

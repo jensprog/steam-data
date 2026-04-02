@@ -1,8 +1,5 @@
 /* Fetching developer details based on the ID from the URL */
 <script setup>
-import { useApiDetails } from "../../composables/useApiDetails";
-import { useRoute } from "vue-router";
-
 const route = useRoute();
 const developerId = route.params.id;
 const { data: developer, fetchData: fetchDeveloper } = useApiDetails("developers", developerId);

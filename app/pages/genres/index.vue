@@ -1,6 +1,4 @@
 <script setup>
-import { useGenresStore } from "../../stores/useGenresStore";
-
 const store = useGenresStore();
 const { genres } = storeToRefs(store);
 await store.fetchGenres();
