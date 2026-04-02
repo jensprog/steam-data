@@ -1,17 +1,8 @@
 import type { Genre } from "../types/genres";
+import { usePaginatedFetch } from "../composables/usePaginatedFetch";
 
 export const useGenresStore = defineStore("genres", () => {
-  const genres = ref<Genre[]>([]);
-  const links = ref<{ self?: string; next?: string; previous?: string }>({});
-
-  async function fetchGenres(page = 1, limit = 20) {
-    const response = (await $fetch(`/api/genres?page=${page}&limit=${limit}`)) as {
-      genres: Genre[];
-      links: { self?: string; next?: string; previous?: string };
-    };
-    genres.value = response.genres;
-    links.value = response.links;
-  }
+  const { items: genres, links, fetchPage: fetchGenres } = usePaginatedFetch<Genre>("genres", "genres");
 
   return { genres, links, fetchGenres };
 });
