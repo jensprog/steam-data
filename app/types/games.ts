@@ -16,4 +16,3 @@ export interface Game {
   genres: string[];
   links: Record<string, string>[];
 }
-

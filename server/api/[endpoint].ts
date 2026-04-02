@@ -3,7 +3,10 @@ import https from "node:https";
 export default defineEventHandler(async (event) => {
   const endpoint = getRouterParam(event, "endpoint");
   const { apiBaseUrl } = useRuntimeConfig();
-  const url = `${apiBaseUrl}/${endpoint}`;
+  const query = getQuery(event);
+  const queryString = new URLSearchParams(query as Record<string, string>).toString();
+  const baseUrl = `${apiBaseUrl}/${endpoint}`;
+  const url = queryString ? `${baseUrl}?${queryString}` : baseUrl;
 
   if (!url.startsWith("https")) {
     return await $fetch(url);
