@@ -13,7 +13,6 @@
   },
   "dependencies": {
     "@pinia/nuxt": "^0.11.3",
-    "axios": "^1.13.6",
     "chartjs": "^0.3.24",
     "nuxt": "^4.4.2",
     "pinia": "^3.0.4",
