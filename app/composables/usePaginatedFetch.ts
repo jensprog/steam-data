@@ -1,3 +1,5 @@
+/* Composable that fetches the paginated data from the API and stores it in a reference.
+  * It also stores the pagination links in a reference. */
 import type { PaginatedResponse } from "../types/paginatedResponse";
 
 export function usePaginatedFetch<T>(endpoint: string, responseKey: string) {
