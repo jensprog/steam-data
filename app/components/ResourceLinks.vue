@@ -1,3 +1,5 @@
+/* Reusable component to display related resources, such as games related to a genre. Takes an array of links and a
+label to display. */
 <script setup>
 defineProps({
   links: Array,

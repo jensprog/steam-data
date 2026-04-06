@@ -13,10 +13,7 @@ const gameLinks = computed(() => developer.value?.links.filter((link) => link.re
     <h1>
       <strong>{{ developer.name }}</strong>
     </h1>
-    <ul>
-      <strong>Games Developed: </strong>
-      <ResourceLinks :links="gameLinks" label="Game" />
-    </ul>
+    <ResourceLinks :links="gameLinks" label="Game" />
   </div>
   <div v-else>
     <p>Loading developer details...</p>

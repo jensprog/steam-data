@@ -1,4 +1,4 @@
-/* Index page for games, lists all games from the API */
+/* Index page for games, lists all games from the API and gives pagination controls */
 <script setup>
 const route = useRoute();
 const store = useGamesStore();

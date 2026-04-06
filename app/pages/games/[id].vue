@@ -15,16 +15,10 @@ const genreLinks = computed(() => game.value?.links.filter((link) => link.title?
       <strong>Game: </strong>
       <strong>{{ game.name }}</strong>
     </h1>
-    <ul>
-      <strong>Developer: </strong>
-      <ResourceLinks :links="developerLinks" label="Developer" />
-    </ul>
+    <ResourceLinks :links="developerLinks" label="Developer" />
     <p><strong>Price:</strong> ${{ game.price.toFixed(2) }}</p>
     <p><strong>Release Date:</strong> {{ game.release_date }}</p>
-    <ul>
-      <strong>Genre: </strong>
-      <ResourceLinks :links="genreLinks" label="Genre" />
-    </ul>
+    <ResourceLinks :links="genreLinks" label="Genre" />
     <p><strong>Estimated Owners:</strong> {{ game.estimated_owners }}</p>
     <p><strong>Metacritic Score:</strong> {{ game.metacritic_score }}</p>
     <p><strong>Compatible for Windows:</strong> {{ game.windows }}</p>

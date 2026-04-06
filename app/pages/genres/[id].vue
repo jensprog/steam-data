@@ -1,4 +1,4 @@
-/* Fetching genre details based on the ID from the URL */
+/* Shows details for every genre and their related games. Using ResourceLinks component to display the games */
 <script setup>
 const route = useRoute();
 const genreId = route.params.id;
@@ -13,9 +13,6 @@ const gameLinks = computed(() => genre.value?.links.filter((link) => link.rel ==
     <h1>
       <strong>{{ genre.name }}</strong>
     </h1>
-    <ul>
-      <strong>Game: </strong>
-      <ResourceLinks :links="gameLinks" label="Game" />
-    </ul>
+    <ResourceLinks :links="gameLinks" label="Game" />>
   </div>
 </template>

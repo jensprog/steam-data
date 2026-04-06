@@ -1,3 +1,6 @@
+/* A reusable component to display a list of resources (like games, genres, etc.) in a table format. It takes an array
+of items and a base path for the links. Each item is expected to have an 'id' and 'name' property. The component
+generates a table where each row contains a link to the resource's detail page based on the provided base path. */
 <script setup>
 defineProps({
   items: Array,
