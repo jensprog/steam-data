@@ -16,18 +16,14 @@ const genreLinks = computed(() => game.value?.links.filter((link) => link.title?
       <strong>{{ game.name }}</strong>
     </h1>
     <ul>
-      <li v-for="link in developerLinks" :key="link.href">
-        <strong>Developer: </strong>
-        <NuxtLink :to="link.href">{{ link.title.replace("Developer: ", "") }} </NuxtLink>
-      </li>
+      <strong>Developer: </strong>
+      <ResourceLinks :links="developerLinks" label="Developer" />
     </ul>
     <p><strong>Price:</strong> ${{ game.price.toFixed(2) }}</p>
     <p><strong>Release Date:</strong> {{ game.release_date }}</p>
     <ul>
-      <li v-for="link in genreLinks" :key="link.href">
-        <strong>Genre: </strong>
-        <NuxtLink :to="link.href">{{ link.title.replace("Genre: ", "") }} </NuxtLink>
-      </li>
+      <strong>Genre: </strong>
+      <ResourceLinks :links="genreLinks" label="Genre" />
     </ul>
     <p><strong>Estimated Owners:</strong> {{ game.estimated_owners }}</p>
     <p><strong>Metacritic Score:</strong> {{ game.metacritic_score }}</p>

@@ -5,7 +5,7 @@ const genreId = route.params.id;
 const { data: genre, fetchData: fetchGenre } = useApiDetails("genres", genreId);
 await fetchGenre();
 
-const genreLinks = computed(() => genre.value?.links.filter((link) => link.rel === "related") ?? []);
+const gameLinks = computed(() => genre.value?.links.filter((link) => link.rel === "related") ?? []);
 </script>
 
 <template>
@@ -14,10 +14,8 @@ const genreLinks = computed(() => genre.value?.links.filter((link) => link.rel =
       <strong>{{ genre.name }}</strong>
     </h1>
     <ul>
-      <li v-for="link in genreLinks" :key="link.href">
-        <strong>Game: </strong>
-        <NuxtLink :to="link.href">{{ link.title.replace("Game: ", "") }} </NuxtLink>
-      </li>
+      <strong>Game: </strong>
+      <ResourceLinks :links="gameLinks" label="Game" />
     </ul>
   </div>
 </template>

@@ -14,9 +14,8 @@ const gameLinks = computed(() => developer.value?.links.filter((link) => link.re
       <strong>{{ developer.name }}</strong>
     </h1>
     <ul>
-      <li v-for="link in gameLinks" :key="link.href">
-        <strong>Games Developed:</strong> {{ link.title.replace("Game: ", "") }}
-      </li>
+      <strong>Games Developed: </strong>
+      <ResourceLinks :links="gameLinks" label="Game" />
     </ul>
   </div>
   <div v-else>
