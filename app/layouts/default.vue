@@ -8,6 +8,7 @@
           <NavLinks to="/games" label="Games" />
           <NavLinks to="/developers" label="Developers" />
           <NavLinks to="/genres" label="Genres" />
+          <NavLinks to="/dashboard" label="Dashboard" />
           <AuthLink />
         </ul>
       </nav>

@@ -7,9 +7,21 @@ export default defineEventHandler(async (event) => {
   const queryString = new URLSearchParams(query as Record<string, string>).toString();
   const baseUrl = `${apiBaseUrl}/${endpoint}`;
   const url = queryString ? `${baseUrl}?${queryString}` : baseUrl;
+  const token = getCookie(event, "token");
 
   if (!url.startsWith("https")) {
     return await $fetch(url);
+  }
+
+  const method = event.method;
+
+  if (method === "POST") {
+    const body = await readBody(event);
+    return await $fetch(url, {
+      method: "POST",
+      headers: token ? { Authorization: `Bearer ${token}` } : undefined,
+      body,
+    });
   }
 
   return new Promise((resolve, reject) => {

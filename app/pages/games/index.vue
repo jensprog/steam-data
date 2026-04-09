@@ -18,5 +18,6 @@ const next = computed(() => links.value.next || undefined);
   <div>
     <ResourceList :items="games" :base-path="'/games'" />
     <PaginationLinks :prev="prev" :next="next" />
+    <CreateButton to="/games/create" label="Create New Game" />
   </div>
 </template>
