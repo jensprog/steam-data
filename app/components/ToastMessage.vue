@@ -12,7 +12,10 @@ onMounted(() => {
 </script>
 
 <template>
-  <div v-if="message">
-    <strong>{{ message }}</strong>
+  <div
+    v-if="message"
+    class="fixed top-6 right-6 bg-[#1b2838] border border-[#66c0f4] text-[#c7d5e0] px-5 py-3 rounded shadow-lg z-50"
+  >
+    {{ message }}
   </div>
 </template>
