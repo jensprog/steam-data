@@ -1,6 +1,6 @@
 /* Global middleware to handle redirect for users who's not authenticated */
 
-export default defineNuxtRouteMiddleware(async (to, from) => {
+export default defineNuxtRouteMiddleware(async (to) => {
   const auth = useState("authMessage");
   const noAuthenticationPaths = ["/login", "/"];
 

@@ -9,6 +9,10 @@ export default defineEventHandler(async (event) => {
   const url = queryString ? `${baseUrl}?${queryString}` : baseUrl;
   const token = getCookie(event, "token");
 
+  if (event.context.authenticated === false) {
+    throw createError({ statusCode: 401, statusMessage: "Unauthorized" });
+  }
+
   if (!url.startsWith("https")) {
     return await $fetch(url);
   }

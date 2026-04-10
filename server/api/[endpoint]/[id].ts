@@ -6,6 +6,10 @@ export default defineEventHandler(async (event) => {
   const { apiBaseUrl } = useRuntimeConfig();
   const url = `${apiBaseUrl}/${endpoint}/${id}`;
 
+  if (event.context.authenticated === false) {
+    throw createError({ statusCode: 401, statusMessage: "Unauthorized" });
+  }
+
   if (!url.startsWith("https")) {
     return await $fetch(url);
   }
