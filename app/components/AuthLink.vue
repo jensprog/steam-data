@@ -10,9 +10,9 @@ async function logout() {
 
 <template>
   <li v-if="data">
-    <button class="text-[#66c0f4]" @click="logout">Logout</button>
+    <button class="text-[#c7d5e0] hover:text-[#66c0f4] transition-colors duration-200" @click="logout">Logout</button>
   </li>
   <li v-else>
-    <NuxtLink to="/login" class="text-[#66c0f4]">Login</NuxtLink>
+    <NuxtLink to="/login" class="text-[#c7d5e0] hover:text-[#66c0f4] transition-colors duration-200">Login</NuxtLink>
   </li>
 </template>
