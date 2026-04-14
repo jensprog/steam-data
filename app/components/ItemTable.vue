@@ -1,6 +1,7 @@
 <script setup>
 defineProps({
   items: Array,
+  name: String,
   label: String,
 });
 </script>
@@ -10,7 +11,7 @@ defineProps({
     <table class="table-auto mx-auto w-full max-w-2xl border-collapse">
       <thead>
         <tr class="bg-[#1b2838]">
-          <th class="text-left text-[#66c0f4] font-semibold py-3 px-6 border-b border-[#2a475e]">Name</th>
+          <th class="text-left text-[#66c0f4] font-semibold py-3 px-6 border-b border-[#2a475e]">{{ name }}</th>
           <th class="text-left text-[#66c0f4] font-semibold py-3 px-6 border-b border-[#2a475e]">{{ label }}</th>
         </tr>
       </thead>

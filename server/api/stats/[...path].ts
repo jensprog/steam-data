@@ -3,7 +3,10 @@ import https from "node:https";
 export default defineEventHandler(async (event) => {
   const path = getRouterParam(event, "path");
   const { apiBaseUrl } = useRuntimeConfig();
-  const url = `${apiBaseUrl}/stats/${path}`;
+  const query = getQuery(event);
+  const queryString = new URLSearchParams(query as Record<string, string>).toString();
+  const baseUrl = `${apiBaseUrl}/stats/${path}`;
+  const url = queryString ? `${baseUrl}?{queryString}` : baseUrl;
 
   if (event.context.authenticated === false) {
     throw createError({ statusCode: 401, statusMessage: "Unauthorized" });
