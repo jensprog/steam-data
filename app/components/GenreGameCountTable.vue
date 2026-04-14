@@ -1,5 +1,5 @@
 <script setup>
-const { data } = await useFetch("/api/stats/genre/by-games");
+const { data } = await useFetch("/api/stats/genres/by-games");
 </script>
 
 <template>
