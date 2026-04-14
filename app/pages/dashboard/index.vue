@@ -4,6 +4,7 @@
     <div class="grid grid-cols-2 gap-6">
       <PriceChart />
       <GameOwnerBar />
+      <GenreGameCountTable />
     </div>
   </div>
 </template>

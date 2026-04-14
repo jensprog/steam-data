@@ -9,14 +9,14 @@ onMounted(() => {
   chart.setOption({
     backgroundColor: "1b2838",
     title: {
-      text: "Games by Owners",
+      text: "Number of games with players",
       left: "center",
       textStyle: { color: "#c7d5e0" },
     },
     xAxis: {
       type: "category",
       data: data.value.map((item) => item.name),
-      axisLabel: { color: "#c7d5e0" },
+      axisLabel: { rotate: 45, color: "#c7d5e0" },
     },
     yAxis: {
       type: "value",
