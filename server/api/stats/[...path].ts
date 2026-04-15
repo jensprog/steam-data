@@ -6,7 +6,7 @@ export default defineEventHandler(async (event) => {
   const query = getQuery(event);
   const queryString = new URLSearchParams(query as Record<string, string>).toString();
   const baseUrl = `${apiBaseUrl}/stats/${path}`;
-  const url = queryString ? `${baseUrl}?{queryString}` : baseUrl;
+  const url = queryString ? `${baseUrl}?${queryString}` : baseUrl;
 
   if (event.context.authenticated === false) {
     throw createError({ statusCode: 401, statusMessage: "Unauthorized" });

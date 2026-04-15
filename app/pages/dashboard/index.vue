@@ -1,3 +1,7 @@
+<script setup lang="ts">
+import DeveloperGameCountTable from "~/components/DeveloperGameCountTable.vue";
+</script>
+
 <template>
   <div>
     <h1 class="text-2xl font-bold mb-6 text-center">Dashboard</h1>
@@ -5,6 +9,7 @@
       <PriceChart />
       <GameOwnerBar />
       <GenreGameCountTable />
+      <DeveloperGameCountTable />
     </div>
   </div>
 </template>
