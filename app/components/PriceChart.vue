@@ -1,3 +1,4 @@
+*/ Component that uses an Apache Echarts pie to display price range for all games in the dataset. */
 <script setup>
 import * as echarts from "echarts";
 

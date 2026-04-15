@@ -1,3 +1,5 @@
+/* Component that renders all developers and their respective amount of games created. Uses isolated pagination for the
+component itself */
 <script setup>
 const store = useDevelopersGamesStore();
 const { developers, links } = storeToRefs(store);

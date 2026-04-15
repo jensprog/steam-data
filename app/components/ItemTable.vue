@@ -1,3 +1,4 @@
+/* Reusable component for other components that needs to loop through different items in the collection */
 <script setup>
 defineProps({
   items: Array,

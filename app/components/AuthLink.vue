@@ -1,3 +1,5 @@
+/* Authentication component for the navigation bar on the web app to display either logout or login depending on state
+*/
 <script setup>
 const { data, refresh } = useFetch("/api/auth/me", { server: false });
 

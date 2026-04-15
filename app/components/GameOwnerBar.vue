@@ -1,3 +1,4 @@
+/* Component that renders a bar chart for number of games with players. Uses Apache Echarts for the bar chart. */
 <script setup>
 import * as echarts from "echarts";
 

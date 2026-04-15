@@ -1,3 +1,4 @@
+/* Dashboard page to render different components for visualized data */
 <script setup lang="ts">
 import DeveloperGameCountTable from "~/components/DeveloperGameCountTable.vue";
 </script>

@@ -23,7 +23,10 @@ defineProps({
           class="border-b border-[#2a475e] hover:bg-[#1b2838] transition-colors duration-150"
         >
           <td class="py-3 px-6">
-            <NuxtLink :to="`${basePath}/${item.id}`" class="text-[#c7d5e0] hover:text-[#66c0f4] transition-colors duration-150">
+            <NuxtLink
+              :to="`${basePath}/${item.id}`"
+              class="text-[#c7d5e0] hover:text-[#66c0f4] transition-colors duration-150"
+            >
               {{ item.name }}
             </NuxtLink>
           </td>
