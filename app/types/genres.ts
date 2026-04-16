@@ -1,5 +1,5 @@
 export interface Genre {
-  id: number;
-  name: string;
-  links: Record<string, string>[];
+    id: number;
+    name: string;
+    links: Record<string, string>[];
 }

@@ -9,10 +9,10 @@ const gameLinks = computed(() => genre.value?.links.filter((link) => link.rel ==
 </script>
 
 <template>
-  <div v-if="genre" :key="genre.id">
-    <h1>
-      <strong>{{ genre.name }}</strong>
-    </h1>
-    <ResourceLinks :links="gameLinks" label="Game" />>
-  </div>
+    <div v-if="genre" :key="genre.id">
+        <h1>
+            <strong>{{ genre.name }}</strong>
+        </h1>
+        <ResourceLinks :links="gameLinks" label="Game" />>
+    </div>
 </template>

@@ -1,10 +1,10 @@
 export interface Developer {
-  id: number;
-  name: string;
-  links: Record<string, string>[];
+    id: number;
+    name: string;
+    links: Record<string, string>[];
 }
 
 export interface DeveloperWithGamesCount {
-  name: string;
-  game_count: number;
+    name: string;
+    game_count: number;
 }

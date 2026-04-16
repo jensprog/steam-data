@@ -10,23 +10,23 @@ const genreLinks = computed(() => game.value?.links.filter((link) => link.title?
 </script>
 
 <template>
-  <div v-if="game" :key="game.id">
-    <h1>
-      <strong>Game: </strong>
-      <strong>{{ game.name }}</strong>
-    </h1>
-    <ResourceLinks :links="developerLinks" label="Developer" />
-    <p><strong>Price:</strong> ${{ game.price.toFixed(2) }}</p>
-    <p><strong>Release Date:</strong> {{ game.release_date }}</p>
-    <ResourceLinks :links="genreLinks" label="Genre" />
-    <p><strong>Estimated Owners:</strong> {{ game.estimated_owners }}</p>
-    <p><strong>Metacritic Score:</strong> {{ game.metacritic_score }}</p>
-    <p><strong>Compatible for Windows:</strong> {{ game.windows }}</p>
-    <p><strong>Compatible for Mac:</strong> {{ game.mac }}</p>
-    <p><strong>Compatible for Linux:</strong> {{ game.linux }}</p>
-    <p><strong>Header Image:</strong> <img :src="game.header_image" :alt="game.name" /></p>
-  </div>
-  <div v-else>
-    <p>Loading game details...</p>
-  </div>
+    <div v-if="game" :key="game.id">
+        <h1>
+            <strong>Game: </strong>
+            <strong>{{ game.name }}</strong>
+        </h1>
+        <ResourceLinks :links="developerLinks" label="Developer" />
+        <p><strong>Price:</strong> ${{ game.price.toFixed(2) }}</p>
+        <p><strong>Release Date:</strong> {{ game.release_date }}</p>
+        <ResourceLinks :links="genreLinks" label="Genre" />
+        <p><strong>Estimated Owners:</strong> {{ game.estimated_owners }}</p>
+        <p><strong>Metacritic Score:</strong> {{ game.metacritic_score }}</p>
+        <p><strong>Compatible for Windows:</strong> {{ game.windows }}</p>
+        <p><strong>Compatible for Mac:</strong> {{ game.mac }}</p>
+        <p><strong>Compatible for Linux:</strong> {{ game.linux }}</p>
+        <p><strong>Header Image:</strong> <img :src="game.header_image" :alt="game.name" /></p>
+    </div>
+    <div v-else>
+        <p>Loading game details...</p>
+    </div>
 </template>

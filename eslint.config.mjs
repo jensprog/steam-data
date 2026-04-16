@@ -14,5 +14,8 @@ export default withNuxt({
     "@stylistic/arrow-parens": "off",
     "@stylistic/member-delimiter-style": "off",
     "nuxt/nuxt-config-keys-order": "off",
+    "@stylistic/indent": "off",
+    "@stylistic/indent-binary-ops": "off",
+    "vue/html-indent": "off",
   },
 });

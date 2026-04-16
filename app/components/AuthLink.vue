@@ -4,17 +4,21 @@
 const { data, refresh } = useFetch("/api/auth/me", { server: false });
 
 async function logout() {
-  await useFetch("/api/auth/logout", { method: "POST" });
-  await refresh();
-  navigateTo("/");
+    await useFetch("/api/auth/logout", { method: "POST" });
+    await refresh();
+    navigateTo("/");
 }
 </script>
 
 <template>
-  <li v-if="data">
-    <button class="text-[#c7d5e0] hover:text-[#66c0f4] transition-colors duration-200" @click="logout">Logout</button>
-  </li>
-  <li v-else>
-    <NuxtLink to="/login" class="text-[#c7d5e0] hover:text-[#66c0f4] transition-colors duration-200">Login</NuxtLink>
-  </li>
+    <li v-if="data">
+        <button class="text-[#c7d5e0] hover:text-[#66c0f4] transition-colors duration-200" @click="logout">
+            Logout
+        </button>
+    </li>
+    <li v-else>
+        <NuxtLink to="/login" class="text-[#c7d5e0] hover:text-[#66c0f4] transition-colors duration-200"
+            >Login</NuxtLink
+        >
+    </li>
 </template>
