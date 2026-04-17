@@ -14,10 +14,7 @@ await fetchGenre();
 
 <template>
     <div v-if="genre" :key="genre.id">
-        <h1>
-            <strong>{{ genre.name }}</strong>
-        </h1>
-        <ResourceLinks :links="genre.links" label="Game" />
+        <DataDetail :name="genre.name" :links="genre.links" label="Game" />
         <div class="flex justify-center gap-4 mt-6">
             <button
                 v-if="genre.pagination_links?.previous"
