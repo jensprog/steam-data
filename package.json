@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "build": "nuxt build",
-    "dev": "NODE_EXTRA_CA_CERTS=/usr/local/share/ca-certificates/LNU_FTK_Campus_Root_CA_2025.crt nuxt dev",
+    "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
