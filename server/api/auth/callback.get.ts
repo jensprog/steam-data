@@ -4,8 +4,9 @@ import { defineEventHandler, getQuery } from "h3";
 export default defineEventHandler(async (event) => {
   const query = getQuery(event);
   const code = query.code as string;
+  const { apiBaseUrl } = useRuntimeConfig();
 
-  const data = await $fetch<{ access_token: string }>(`https://cu2107.camp.lnu.se/auth/google/callback?code=${code}`, {
+  const data = await $fetch<{ access_token: string }>(`${apiBaseUrl}/auth/google/callback?code=${code}`, {
     method: "GET",
   });
 
