@@ -7,8 +7,9 @@ export default defineEventHandler(async (event) => {
     return null;
   }
 
+  const { apiBaseUrl } = useRuntimeConfig();
   try {
-    const data = await $fetch<{ access_token: string }>("https://cu2107.camp.lnu.se/auth/refresh", {
+    const data = await $fetch<{ access_token: string }>(`${apiBaseUrl}/auth/refresh`, {
       method: "GET",
       headers: {
         Authorization: `Bearer ${token}`,

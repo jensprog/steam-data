@@ -5,6 +5,9 @@ export default defineNuxtConfig({
 
   runtimeConfig: {
     apiBaseUrl: "http://localhost:8000",
+    public: {
+      authBaseUrl: "http://localhost:8000",
+    },
   },
   compatibilityDate: "2025-07-15",
 

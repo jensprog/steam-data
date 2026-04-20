@@ -5,7 +5,7 @@
             <h1 class="text-[#66c0f4] text-2xl font-bold tracking-wide">Steam Games Archive</h1>
             <p class="text-[#c7d5e0] text-sm text-center">Sign in to access the archive</p>
             <a
-                href="https://cu2107.camp.lnu.se/auth/google"
+                :href="`${config.public.authBaseUrl}/auth/google`"
                 class="w-full text-center bg-[#4a90d9] hover:bg-[#66c0f4] text-white font-semibold py-2 px-6 rounded transition-colors duration-200">
                 Login with Google
             </a>
@@ -13,3 +13,7 @@
         </div>
     </div>
 </template>
+
+<script setup lang="ts">
+const config = useRuntimeConfig();
+</script>
