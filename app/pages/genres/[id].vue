@@ -6,7 +6,7 @@ const page = ref(1);
 const genre = ref(null);
 
 async function fetchGenre(newPage = 1) {
-    genre.value = await $fetch(`/api/genres/${genreId}`, { query: { page: newPage, limit: 20 } });
+    genre.value = await $fetch(useApiUrl(`genres/${genreId}`), { query: { page: newPage, limit: 20 } });
 }
 
 await fetchGenre();
