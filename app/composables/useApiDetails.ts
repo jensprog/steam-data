@@ -8,6 +8,7 @@ export const useApiDetails = <T>(endpoint: string, id: string | number) => {
             const response = (await $fetch(useApiUrl(`${endpoint}/${id}`))) as T;
             data.value = response;
         } catch (error) {
+            console.error(error);
             const err = error as { statusCode: number; statusMessage: string };
             throw createError({ status: err.statusCode, statusMessage: err.statusMessage })
         }
