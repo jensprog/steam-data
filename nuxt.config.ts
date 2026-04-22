@@ -9,6 +9,15 @@ export default defineNuxtConfig({
             apiBaseUrl: "http://localhost:8000",
         },
     },
+
+    nitro: {
+        devProxy: {
+            "/api/stats": {
+                target: "http://127.0.0.1:8000/stats",
+                changeOrigin: true,
+            },
+        },
+    },
     compatibilityDate: "2025-07-15",
 
     eslint: {
