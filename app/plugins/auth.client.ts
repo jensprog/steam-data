@@ -2,9 +2,15 @@
 export default defineNuxtPlugin(() => {
     setInterval(
         async () => {
-            const data = await $fetch("/api/auth/me");
-            if (data) {
-                $fetch("/api/auth/refresh");
+            try {
+                const data = await $fetch("/api/auth/me");
+                if (data) {
+                    await $fetch("/api/auth/refresh");
+                } else {
+                    await navigateTo("/login");
+                }
+            } catch {
+                await navigateTo("/login");
             }
         },
         55 * 60 * 1000,
