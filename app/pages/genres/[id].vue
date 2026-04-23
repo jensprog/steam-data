@@ -19,15 +19,24 @@ await fetchGenre();
             <button
                 v-if="genre.pagination_links?.previous"
                 class="bg-[#1b2838] text-[#66c0f4] border border-[#2a475e] hover:border-[#66c0f4] py-2 px-5 rounded transition-colors duration-200"
-                @click="fetchGenre(page - 1); page--">
+                @click="
+                    fetchGenre(page - 1);
+                    page--;
+                ">
                 &larr; Previous
             </button>
             <button
                 v-if="genre.pagination_links?.next"
                 class="bg-[#1b2838] text-[#66c0f4] border border-[#2a475e] hover:border-[#66c0f4] py-2 px-5 rounded transition-colors duration-200"
-                @click="fetchGenre(page + 1); page++">
+                @click="
+                    fetchGenre(page + 1);
+                    page++;
+                ">
                 Next &rarr;
             </button>
         </div>
+    </div>
+    <div v-else>
+        <p>Loading genre details...</p>
     </div>
 </template>
