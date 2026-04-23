@@ -6,8 +6,9 @@ export const useDevelopersStore = defineStore("developers", () => {
     const {
         items: developers,
         links,
+        error,
         fetchPage: fetchDevelopers,
     } = usePaginatedFetch<Developer>("developers", "developers");
 
-    return { developers, links, fetchDevelopers };
+    return { developers, links, error, fetchDevelopers };
 });

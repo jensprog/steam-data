@@ -6,12 +6,18 @@ import { useApiUrl } from "./useApiUrl";
 export function usePaginatedFetch<T>(endpoint: string, responseKey: string) {
     const items = ref<T[]>([]);
     const links = ref<{ self?: string; next?: string; previous?: string }>({});
+    const error = ref<string | null>(null);
 
     async function fetchPage(page = 1, limit = 20) {
-        const response = (await $fetch(useApiUrl(`${endpoint}?page=${page}&limit=${limit}`))) as PaginatedResponse<T>;
-        items.value = response[responseKey] as T[];
-        links.value = response.links;
+        error.value = null;
+        try {
+            const response = (await $fetch(useApiUrl(`${endpoint}?page=${page}&limit=${limit}`))) as PaginatedResponse<T>;
+            items.value = response[responseKey] as T[];
+            links.value = response.links;
+        } catch {
+            error.value = "Could not load data. Please try again.";
+        }
     }
 
-    return { items, links, fetchPage };
+    return { items, links, error, fetchPage };
 }

@@ -2,7 +2,7 @@
 <script setup>
 const route = useRoute();
 const store = useGamesStore();
-const { games, links } = storeToRefs(store);
+const { games, links, error } = storeToRefs(store);
 const page = computed(() => Number(route.query.page) || 1);
 const pending = ref(false);
 await store.fetchGames(page.value);
@@ -18,7 +18,8 @@ const next = computed(() => links.value.next || undefined);
 </script>
 
 <template>
-    <div v-if="pending" class="text-[#c7d5e0] text-center mt-10">Loading...</div>
+    <div v-if="error" class="text-red-400 text-center mt-10">{{ error }}</div>
+    <div v-else-if="pending" class="text-[#c7d5e0] text-center mt-10">Loading...</div>
     <div v-else>
         <ResourceList :items="games" :base-path="'/games'" />
         <PaginationLinks :prev="prev" :next="next" />

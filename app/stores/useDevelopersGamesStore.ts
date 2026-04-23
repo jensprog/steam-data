@@ -6,8 +6,9 @@ export const useDevelopersGamesStore = defineStore("developers-games", () => {
     const {
         items: developers,
         links,
+        error,
         fetchPage: fetchDevelopers,
     } = usePaginatedFetch<DeveloperWithGamesCount>("stats/developers/by-games", "developers");
 
-    return { developers, links, fetchDevelopers };
+    return { developers, links, error, fetchDevelopers };
 });
