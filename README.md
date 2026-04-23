@@ -8,8 +8,6 @@ Steam Games Archive App
 
 Create a functional, visually engaging, and _interactive_ data visualization web application that consumes the API you built in the previous assignment. The application must authenticate users via OAuth and be publicly accessible.
 
-_Describe your application in a few sentences: what does it do, what dataset does it visualize, and what insights does it provide?_
-
 - The application visualizes the data from the [_API_](https://gitlab.lnu.se/1dv027/student/jk224vx/exercises/steam-api) which uses 15,000 Steam games. The application enables users to manually check games, developers and genres by themselves and each resource has related links to other resources.
 - The user can navigate to /games and click on a specific game and will receive information about that game and if the game has any developers and genres listed, the user can navigate to the developer(s) and genre(s) and get more information about those resources.
 
@@ -19,8 +17,6 @@ _Describe your application in a few sentences: what does it do, what dataset doe
 - The tables are showing the number of genres present in the dataset and how many games have the specific genre and number of developers in the dataset and how many games they have created. The developer table is using isolated pagination (not url based pagination) to navigate through if the user wants to look for a specific developer. Pagination was not used in the genre table because it's only 27 genres (28 if you count one I created myself) and would create unnecessary overhead.
 
 ## Deployed Application
-
-_Provide the link to your publicly accessible application:_
 
 [_Link to public URL_](https://cu2107.camp.lnu.se/)
 
@@ -69,21 +65,17 @@ _Describe your chosen AI/ML feature and how it integrates with your application:
 
 ## Core Technologies Used
 
-| Layer             | Choice           |
-| ----------------- | ---------------- |
-| **Visualization** | Apache E-charts. |
-| **Front-end**     | Vue, Nuxt.js.    |
-| **Styling**       | Tailwind CSS     |
-
-_List the technologies you chose and briefly explain why:_
+| Layer             | Choice             |
+| ----------------- | ------------------ |
+| **Visualization** | Apache E-charts.   |
+| **Front-end**     | Vue, Nuxt.js, TSC. |
+| **Styling**       | Tailwind CSS       |
 
 - For the application I used Nuxt.js as the main framework using TypeScript as language.
 - TailwindCSS for styling.
 - Vue.js (via Nuxt) for frontend components and pages.
 
 ## How to Use
-
-_Explain how to interact with your visualization (controls, filters, etc.). Screenshots/gifs are encouraged._
 
 ![Dashboard Image](public/images/dashboard.png)
 
