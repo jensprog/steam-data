@@ -8,6 +8,7 @@ export function usePaginatedFetch<T>(endpoint: string, responseKey: string) {
     const links = ref<{ self?: string; next?: string; previous?: string }>({});
     const error = ref<string | null>(null);
 
+    /* Fetches a page of items from the API and updates items, links, and error state. */
     async function fetchPage(page = 1, limit = 20) {
         error.value = null;
         try {

@@ -5,6 +5,7 @@ const genreId = route.params.id;
 const page = ref(1);
 const genre = ref(null);
 
+/* Fetches genre details and its related games for the given page. */
 async function fetchGenre(newPage = 1) {
     genre.value = await $fetch(useApiUrl(`genres/${genreId}`), { query: { page: newPage, limit: 20 } });
 }

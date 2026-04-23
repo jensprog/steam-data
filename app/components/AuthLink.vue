@@ -3,6 +3,7 @@
 <script setup>
 const { data, refresh } = useFetch("/api/auth/me", { server: false });
 
+/* Logs out the user and redirects to the home page. */
 async function logout() {
     await useFetch("/api/auth/logout", { method: "POST" });
     await refresh();

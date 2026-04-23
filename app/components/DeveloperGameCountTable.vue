@@ -6,6 +6,7 @@ const { developers, links } = storeToRefs(store);
 const page = ref(1);
 await store.fetchDevelopers(page.value);
 
+/* Updates the current page and fetches the corresponding developers data. */
 async function changePage(newPage) {
     page.value = newPage;
     await store.fetchDevelopers(newPage);
