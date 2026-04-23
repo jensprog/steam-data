@@ -1,3 +1,4 @@
+/* Pinia store for paginated developers data, wraps usePaginatedFetch for the developers endpoint. */
 import type { Developer } from "../types/developers";
 import { usePaginatedFetch } from "../composables/usePaginatedFetch";
 

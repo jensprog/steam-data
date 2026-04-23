@@ -1,3 +1,4 @@
+/* Pinia store for paginated developers-with-game-count data, wraps usePaginatedFetch for the stats/developers/by-games endpoint. */
 import type { DeveloperWithGamesCount } from "../types/developers";
 import { usePaginatedFetch } from "../composables/usePaginatedFetch";
 

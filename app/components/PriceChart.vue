@@ -1,4 +1,4 @@
-*/ Component that uses an Apache Echarts pie to display price range for all games in the dataset. */
+/* Component that uses an Apache Echarts pie chart to display price range distribution for all games in the dataset. */
 <script setup>
 import * as echarts from "echarts";
 

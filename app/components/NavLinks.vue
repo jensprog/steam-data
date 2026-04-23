@@ -1,3 +1,4 @@
+/* Reusable navigation link component that highlights the active route. */
 <script setup>
 defineProps({
     to: String,

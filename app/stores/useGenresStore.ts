@@ -1,3 +1,4 @@
+/* Pinia store for paginated genres data, wraps usePaginatedFetch for the genres endpoint. */
 import type { Genre } from "../types/genres";
 import { usePaginatedFetch } from "../composables/usePaginatedFetch";
 

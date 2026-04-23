@@ -1,3 +1,4 @@
+/* Pinia store for paginated games data, wraps usePaginatedFetch for the games endpoint. */
 import type { Game } from "../types/games";
 import { usePaginatedFetch } from "../composables/usePaginatedFetch";
 

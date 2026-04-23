@@ -1,3 +1,4 @@
+/* Reusable component for detail pages that displays a resource's name and a list of related links in a table. */
 <script setup>
 defineProps({
     links: Array,
