@@ -26,42 +26,26 @@ See [all requirements in Issues](../../issues/). Close issues as you implement t
 
 ### Functional Requirements
 
-| Requirement                                                                        | Issue                  | Status               |
-| ---------------------------------------------------------------------------------- | ---------------------- | -------------------- |
-| API Integration — the app consumes your WT1 API                                    | [#14](../../issues/14) | :white_large_square: |
-| OAuth Authentication — users log in via OAuth 2.0                                  | [#15](../../issues/15) | :white_large_square: |
-| Interactive data visualization with aggregation/adaptation for 10 000+ data points | [#11](../../issues/11) | :white_large_square: |
-| Efficient loading — pagination, lazy loading, loading indicators                   | [#13](../../issues/13) | :white_large_square: |
+| Requirement                                                                        | Issue                  | Status             |
+| ---------------------------------------------------------------------------------- | ---------------------- | ------------------ |
+| API Integration — the app consumes your WT1 API                                    | [#14](../../issues/14) | :white_check_mark: |
+| OAuth Authentication — users log in via OAuth 2.0                                  | [#15](../../issues/15) | :white_check_mark: |
+| Interactive data visualization with aggregation/adaptation for 10 000+ data points | [#11](../../issues/11) | :white_check_mark: |
+| Efficient loading — pagination, lazy loading, loading indicators                   | [#13](../../issues/13) | :white_check_mark: |
 
 ### Non-Functional Requirements
 
-| Requirement                                   | Issue                | Status               |
-| --------------------------------------------- | -------------------- | -------------------- |
-| Clear and well-structured code                | [#1](../../issues/1) | :white_large_square: |
-| Code reuse                                    | [#2](../../issues/2) | :white_large_square: |
-| Dependency management and scripts             | [#3](../../issues/3) | :white_large_square: |
-| Source code documentation                     | [#4](../../issues/4) | :white_large_square: |
-| Coding standard                               | [#5](../../issues/5) | :white_large_square: |
-| Examiner can follow the creation process      | [#6](../../issues/6) | :white_large_square: |
-| Publicly accessible over the internet         | [#7](../../issues/7) | :white_large_square: |
-| Keys and tokens handled correctly             | [#8](../../issues/8) | :white_large_square: |
-| Complete assignment report with correct links | [#9](../../issues/9) | :white_large_square: |
-
-### VG — AI/ML Feature (optional)
-
-For a VG grade, integrate **one** AI/ML feature into the application. Pick one below or propose your own of similar scope. See the [VG issue](../../issues/12) for full details and acceptance criteria.
-
-| Option                                                        | Status               |
-| ------------------------------------------------------------- | -------------------- |
-| Semantic Search — natural language queries matched by meaning | :white_large_square: |
-| Content-Based Recommendations — "items similar to this one"   | :white_large_square: |
-| Sentiment Analysis — analyze and visualize text sentiment     | :white_large_square: |
-| Text Summarization / Generation — LLM-powered summaries       | :white_large_square: |
-| Clustering & Grouping — auto-group similar items visually     | :white_large_square: |
-| RAG — natural language Q&A grounded in your dataset           | :white_large_square: |
-| Other: _describe_                                             | :white_large_square: |
-
-_Describe your chosen AI/ML feature and how it integrates with your application:_
+| Requirement                                   | Issue                | Status             |
+| --------------------------------------------- | -------------------- | ------------------ |
+| Clear and well-structured code                | [#1](../../issues/1) | :white_check_mark: |
+| Code reuse                                    | [#2](../../issues/2) | :white_check_mark: |
+| Dependency management and scripts             | [#3](../../issues/3) | :white_check_mark: |
+| Source code documentation                     | [#4](../../issues/4) | :white_check_mark: |
+| Coding standard                               | [#5](../../issues/5) | :white_check_mark: |
+| Examiner can follow the creation process      | [#6](../../issues/6) | :white_check_mark: |
+| Publicly accessible over the internet         | [#7](../../issues/7) | :white_check_mark: |
+| Keys and tokens handled correctly             | [#8](../../issues/8) | :white_check_mark: |
+| Complete assignment report with correct links | [#9](../../issues/9) | :white_check_mark: |
 
 ## Core Technologies Used
 
@@ -70,10 +54,16 @@ _Describe your chosen AI/ML feature and how it integrates with your application:
 | **Visualization** | Apache E-charts.   |
 | **Front-end**     | Vue, Nuxt.js, TSC. |
 | **Styling**       | Tailwind CSS       |
+| **Deployment**    | Docker, Nginx      |
 
 - For the application I used Nuxt.js as the main framework using TypeScript as language.
 - TailwindCSS for styling.
 - Vue.js (via Nuxt) for frontend components and pages.
+- Docker with Kaniko for building the image.
+
+## Deployment
+
+The application is containerized using Docker and deployed on a server. The frontend (Nuxt) and backend (FastAPI) each run in their own container, orchestrated with Docker Compose. Nginx acts as a reverse proxy, routing `/api/*` traffic to the FastAPI container and all other requests to the Nuxt container. A GitLab CI pipeline automatically builds and publishes a new Docker image to the GitLab registry on every push to master.
 
 ## How to Use
 
@@ -83,7 +73,7 @@ _Describe your chosen AI/ML feature and how it integrates with your application:
 
 ![All Games Image](public/images/allgames.png)
 
-- allgames.png shows all the games that are in the 15,000 Steam dataset, only showing 20 results per page for performance. Using pagination with **Next** and **Previous** buttons in the bottom to navigate through the list of games.
+- allgames.png shows all the games that are in the 15,000 Steam dataset, only showing 20 results per page for performance. Using pagination with **Next** and **Previous** buttons in the bottom to navigate through the list of games.z
 
 ![Specific Game Image](public/images/specificgame.png)
 
@@ -103,4 +93,12 @@ _Describe your chosen AI/ML feature and how it integrates with your application:
 
 ## Acknowledgements
 
-_Resources, attributions, or shoutouts._
+**Resources used in the app:**
+
+- https://nuxt.com/docs/4.x/directory-structure
+- https://gitlab.lnu.se/1dv027/student/jk224vx/exercises/steam-api
+- https://echarts.apache.org/en/index.html
+
+**Shoutout:**
+
+- https://www.kaggle.com/datasets/fronkongames/steam-games-dataset
