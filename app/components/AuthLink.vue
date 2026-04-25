@@ -7,7 +7,7 @@ const { data, refresh } = useFetch("/api/auth/me", { server: false });
 async function logout() {
     await useFetch("/api/auth/logout", { method: "POST" });
     await refresh();
-    navigateTo("/");
+    navigateTo("/login?toast=logout");
 }
 </script>
 

@@ -18,6 +18,7 @@
         <main class="flex-1 text-[#66c0f4]">
             <slot />
         </main>
+        <ToastMessage />
 
         <footer>
             <div class="container mx-auto p-4 text-center text-sm text-[#66c0f4]">

@@ -17,5 +17,5 @@ export default defineEventHandler(async (event) => {
     maxAge: 60 * 60, // 1 hour
   });
 
-  sendRedirect(event, "/");
+  sendRedirect(event, "/?toast=login");
 });

@@ -1,5 +1,17 @@
 <script setup>
 definePageMeta({ layout: "home" });
+
+const route = useRoute();
+const message = useState("authMessage");
+
+onMounted(() => {
+    if (route.query.toast === "login") {
+        message.value = "You are now logged in";
+        const url = new URL(window.location.href);
+        url.searchParams.delete("toast");
+        window.history.replaceState({}, "", url.toString());
+    }
+});
 </script>
 
 <template>

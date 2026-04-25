@@ -16,4 +16,15 @@
 
 <script setup lang="ts">
 const config = useRuntimeConfig();
+const route = useRoute();
+const message = useState("authMessage");
+
+onMounted(() => {
+    if (route.query.toast === "logout") {
+        message.value = "You have logged out";
+        const url = new URL(window.location.href);
+        url.searchParams.delete("toast");
+        window.history.replaceState({}, "", url.toString());
+    }
+});
 </script>

@@ -7,5 +7,5 @@ export default defineEventHandler((event) => {
     secure: true,
     sameSite: "lax",
   });
-  sendRedirect(event, "/login");
+  sendRedirect(event, "/login?toast=logout");
 });
