@@ -2,6 +2,7 @@ export interface Game {
     id: number;
     name: string;
     price: number;
+    short_description: string;
     release_date: string | null;
     metacritic_score: number;
     positive: number;

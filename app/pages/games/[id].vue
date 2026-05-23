@@ -22,6 +22,7 @@ const genreLinks = computed(() => game.value?.links.filter((link) => link.title?
                 <div class="flex gap-8 text-[#c7d5e0]">
                     <span><span class="text-[#66c0f4] font-semibold">Metacritic:</span> {{ game.metacritic_score }}</span>
                     <span><span class="text-[#66c0f4] font-semibold">Estimated owners:</span> {{ game.estimated_owners }}</span>
+                    <span><span class="text-[#66c0f4] font-semibold">Short description:</span> {{ game.short_description }}</span>
                 </div>
                 <div class="flex gap-2 mt-1">
                     <span v-if="game.windows" class="bg-[#2a475e] text-[#66c0f4] text-sm px-3 py-1 rounded">Windows</span>
