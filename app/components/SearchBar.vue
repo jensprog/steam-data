@@ -65,9 +65,14 @@ watch(query, search);
                             v-for="game in games"
                             :key="game.id"
                             :to="`/games/${game.id}`"
-                            class="block px-4 py-2 text-[#c7d5e0] hover:bg-[#2a475e] hover:text-[#66c0f4]"
+                            class="flex items-center gap-3 px-4 py-2 text-[#c7d5e0] hover:bg-[#2a475e] hover:text-[#66c0f4]"
                             @click="isOpen = false">
-                            {{ game.name }}
+                            <img
+                                v-if="game.header_image"
+                                :src="game.header_image"
+                                :alt="game.name"
+                                class="w-16 h-9 object-cover rounded flex-shrink-0" />
+                            <span>{{ game.name }}</span>
                         </NuxtLink>
                     </div>
 
