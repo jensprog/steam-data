@@ -21,7 +21,7 @@ const next = computed(() => links.value.next || undefined);
     <div v-if="error" class="text-red-400 text-center mt-10">{{ error }}</div>
     <div v-else-if="pending" class="text-[#c7d5e0] text-center mt-10">Loading...</div>
     <div v-else>
-        <ResourceList :items="games" :base-path="'/games'" />
+        <GamesList :items="games" :base-path="'/games'" />
         <PaginationLinks :prev="prev" :next="next" />
     </div>
 </template>

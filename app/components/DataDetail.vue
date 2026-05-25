@@ -14,6 +14,7 @@ defineProps({
             <table class="table-auto mx-auto w-full max-w-2xl border-collapse">
                 <thead>
                     <tr class="bg-[#1b2838]">
+                        <th v-if="links?.some(l => l.header_image)" class="py-3 px-6 border-b border-[#2a475e] w-40"></th>
                         <th class="text-left text-[#66c0f4] font-semibold py-3 px-6 border-b border-[#2a475e]">
                             {{ label }}
                         </th>
@@ -24,6 +25,9 @@ defineProps({
                         v-for="link in links"
                         :key="link.href"
                         class="border-b border-[#2a475e] hover:bg-[#1b2838] transition-colors duration-150">
+                        <td v-if="links?.some(l => l.header_image)" class="py-2 px-6 w-40">
+                            <img v-if="link.header_image" :src="link.header_image" :alt="link.title" class="w-36 rounded" />
+                        </td>
                         <td class="py-3 px-6">
                             <NuxtLink
                                 :to="link.href"
