@@ -3,6 +3,17 @@ export default defineNuxtConfig({
     modules: ["@nuxt/eslint", "@pinia/nuxt", "@nuxtjs/tailwindcss"],
     devtools: { enabled: true },
 
+    app: {
+        head: {
+            link: [
+                {
+                    rel: "stylesheet",
+                    href: "https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&display=swap",
+                },
+            ],
+        },
+    },
+
     runtimeConfig: {
         apiBaseUrl: "http://localhost:8000",
         public: {
