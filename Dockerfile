@@ -11,6 +11,7 @@ COPY ./app /code/app
 COPY ./server /code/server
 COPY ./public /code/public
 COPY ./nuxt.config.ts /code/nuxt.config.ts
+COPY ./tailwind.config.js /code/tailwind.config.js
 COPY ./tsconfig.json /code/tsconfig.json
 
 RUN npm run build
