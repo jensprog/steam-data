@@ -15,7 +15,7 @@ async function changePage(newPage) {
 
 <template>
     <div>
-        <ItemTable :items="developers" name="Developers" label="Games" />
+        <ItemTable :items="developers" name="Developers" label="Games" base-path="developers" />
         <div class="flex justify-center gap-4 mt-6">
             <button
                 v-if="links.previous"

@@ -3,6 +3,7 @@
 defineProps({
     items: Array,
     name: String,
+    basePath: String,
     label: String,
 });
 </script>
@@ -25,7 +26,15 @@ defineProps({
                     v-for="item in items"
                     :key="item.name"
                     class="border-b border-[#2a475e] hover:bg-[#1b2838] transition-colors duration-150">
-                    <td class="py-3 px-6 text-[#c7d5e0]">{{ item.name }}</td>
+                    <td class="py-3 px-6 text-[#c7d5e0]">
+                        <NuxtLink
+                            v-if="basePath"
+                            class="text-[#66c0f4] hover:underline"
+                            :to="`/${basePath}/${item.id}`"
+                            >{{ item.name }}</NuxtLink
+                        >
+                        <span v-else>{{ item.name }}</span>
+                    </td>
                     <td class="py-3 px-6 text-[#c7d5e0]">{{ item.game_count }}</td>
                 </tr>
             </tbody>
