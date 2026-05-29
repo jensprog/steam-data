@@ -4,6 +4,9 @@ export interface Game {
     price: number;
     short_description: string;
     release_date: string | null;
+    rank: number;
+    concurrent_in_game: number;
+    peak_in_game: number;
     metacritic_score: number;
     positive: number;
     negative: number;

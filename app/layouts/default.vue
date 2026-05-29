@@ -15,6 +15,7 @@
                         <NavLinks to="/developers" label="Developers" />
                         <NavLinks to="/genres" label="Genres" />
                         <NavLinks to="/dashboard" label="Dashboard" />
+                        <NavLinks to="/rankings" label="Rankings" />
                         <AuthLink />
                     </ul>
                 </div>

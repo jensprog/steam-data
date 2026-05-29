@@ -1,4 +1,5 @@
 /* Layout blueprint for index page to fill the background image over the whole page */
+
 <template>
     <div class="flex flex-col min-h-screen bg-[#171a21]">
         <header class="shadow-sm bg-[#1b2838]">
@@ -16,6 +17,7 @@
                         <NavLinks to="/developers" label="Developers" />
                         <NavLinks to="/genres" label="Genres" />
                         <NavLinks to="/dashboard" label="Dashboard" />
+                        <NavLinks to="/rankings" label="Rankings" />
                         <AuthLink />
                     </ul>
                 </div>
