@@ -17,7 +17,12 @@ defineProps<{
             :key="game.rank"
             class="flex items-center gap-4 px-4 py-3 border-b border-[#2a475e] hover:bg-[#2a475e] transition-colors duration-150">
             <span class="text-[#66c0f4] font-bold w-6 text-right shrink-0">#{{ game.rank }}</span>
-            <img :src="game.header_image" :alt="game.name" class="w-24 h-14 object-cover rounded shrink-0" />
+            <img
+                v-if="game.header_image"
+                :src="game.header_image"
+                :alt="game.name"
+                class="w-24 h-14 object-cover rounded shrink-0" />
+            <div v-else class="w-24 h-14 bg-[#2a475e] rounded shrink-0" />
             <div class="flex-1 min-w-0">
                 <p class="text-[#c7d5e0] font-semibold truncate">{{ game.name }}</p>
                 <p class="text-sm text-[#66c0f4]">{{ game.concurrent_in_game.toLocaleString() }} playing now</p>
