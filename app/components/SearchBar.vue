@@ -2,6 +2,7 @@
 import type { Game } from "../types/games";
 import type { Developer } from "../types/developers";
 import type { Genre } from "../types/genres";
+import { useDebounceFn } from '@vueuse/core'
 
 const query = ref("");
 const games = ref<Game[]>([]);
@@ -10,7 +11,7 @@ const genres = ref<Genre[]>([]);
 const isLoading = ref(false);
 const isOpen = ref(false);
 
-async function search() {
+const debouncedSearch = useDebounceFn(async () => {
     if (query.value === "") {
         isOpen.value = false;
         return;
@@ -29,11 +30,10 @@ async function search() {
     genres.value = queryGenres.genres;
 
     isOpen.value = true;
-
     isLoading.value = false;
-}
+}, 300);
 
-watch(query, search);
+watch(query, debouncedSearch);
 </script>
 
 <template>
