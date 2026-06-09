@@ -3,7 +3,7 @@
 import * as echarts from "echarts";
 
 const chartRef = ref(null);
-const { data } = await useFetch("/api/stats/games/by-owners");
+const { data } = await useFetch(() => useApiUrl("stats/games/by-owners"));
 
 onMounted(() => {
     const chart = echarts.init(chartRef.value, null, { rendered: "svg" });
