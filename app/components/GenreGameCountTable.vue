@@ -5,6 +5,6 @@ const { data } = await useFetch(() => useApiUrl("stats/genres/by-games"));
 
 <template>
     <div>
-        <ItemTable :items="data.genres" name="Genre" label="Games" base-path="genres" />
+        <ItemTable :items="data?.genres ?? []" name="Genre" label="Games" base-path="genres" />
     </div>
 </template>
