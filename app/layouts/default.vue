@@ -1,9 +1,16 @@
+<script setup lang="ts">
+const { data: totalPlayers } = await useFetch<number>(useApiUrl("stats/games/concurrent-players-in-game"));
+</script>
+
 <template>
     <div class="flex flex-col min-h-screen bg-[#171a21]">
         <header class="shadow-sm bg-[#1b2838]">
             <nav class="container mx-auto p-4 flex items-center gap-4">
                 <div class="flex-1">
                     <NuxtLink to="/" class="font-bold text-[#66c0f4]">Steam Games Archive</NuxtLink>
+                    <span class="ml-4 text-[#66c0f4]"
+                        ><span class="text-[#a4d007]">{{ totalPlayers }}</span> Total players currently in-game</span
+                    >
                 </div>
                 <div class="w-80">
                     <SearchBar />
@@ -27,7 +34,7 @@
         </main>
         <footer>
             <div class="container mx-auto p-4 text-center text-sm text-[#66c0f4]">
-                Copyright &copy; {{ new Date().getFullYear() }} Steam Games Archive
+                <p>Info coming</p>
             </div>
         </footer>
     </div>
